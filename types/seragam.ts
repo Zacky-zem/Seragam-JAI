@@ -1,7 +1,8 @@
-export type AppPage = 'login' | 'landing' | 'tracking'
+export type AppPage = 'login' | 'landing' | 'tracking' | 'about'
 
 export type UserSession = {
   username: string
+  email: string | null
   fullName: string
   role: string
   isLoggedIn: boolean

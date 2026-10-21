@@ -18,7 +18,7 @@ export function useUniformRecords(enabled: boolean, onError: NotifyError) {
 
   const fetchRecords = useCallback(async () => {
     try {
-      const response = await fetch('/api/records')
+      const response = await fetch('/seragam-jai/api/records')
       if (!response.ok) throw new Error('Gagal mengambil data dari server')
 
       const data: unknown = await response.json()
@@ -31,12 +31,12 @@ export function useUniformRecords(enabled: boolean, onError: NotifyError) {
   }, [])
 
   useEffect(() => {
-    if (enabled) fetchRecords()
-  }, [enabled, fetchRecords])
+    fetchRecords()
+  }, [fetchRecords])
 
   const addRecord = async (record: UniformRecord) => {
     try {
-      const response = await fetch('/api/records', {
+      const response = await fetch('/seragam-jai/api/records', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(toApiPayload(record)),
@@ -54,7 +54,7 @@ export function useUniformRecords(enabled: boolean, onError: NotifyError) {
 
   const updateRecord = async (record: UniformRecord) => {
     try {
-      const response = await fetch('/api/records', {
+      const response = await fetch('/seragam-jai/api/records', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...toApiPayload(record), id: record.id }),
@@ -72,7 +72,7 @@ export function useUniformRecords(enabled: boolean, onError: NotifyError) {
 
   const deleteRecord = async (id: string) => {
     try {
-      const response = await fetch('/api/records', {
+      const response = await fetch('/seragam-jai/api/records', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id }),

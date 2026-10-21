@@ -3,25 +3,25 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Seragam JAI',
-  description: 'Dashboard pengajuan dan distribusi seragam PT JAI.',
+  title: 'Seragam JAI | PT Jatim Autocomp Indonesia',
+  description: 'Portal publik pengajuan dan distribusi seragam PT Jatim Autocomp Indonesia.',
   generator: 'Next.js',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/seragam-jai/icon-light-32x32.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/seragam-jai/icon-dark-32x32.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: '/seragam-jai/icon.svg',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.jpeg',
+    apple: '/seragam-jai/apple-icon.jpeg',
   },
 }
 
